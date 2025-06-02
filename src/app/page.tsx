@@ -30,7 +30,7 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <div className="container my-5">
-        <SearchForm onSearch={handleSearch} />
+        <SearchForm onSearchAction={handleSearch} />
         <FlightList flights={flights} />
       </div>
     </>

@@ -1,63 +1,6 @@
 'use client';
 import { useState, useMemo } from 'react';
-
-interface AirportInfo {
-  airport: string;
-  timezone: string;
-  iata: string;
-  icao: string;
-  terminal: string | null;
-  gate: string | null;
-  baggage?: string | null;
-  delay: number | null;
-  scheduled: string;
-  estimated: string | null;
-  actual: string | null;
-  estimated_runway?: string | null;
-  actual_runway?: string | null;
-}
-
-interface Airline {
-  name: string;
-  iata: string;
-  icao: string;
-}
-
-interface FlightInfo {
-  number: string;
-  iata: string;
-  icao: string;
-  codeshared?: never;
-}
-
-interface Aircraft {
-  registration: string;
-  iata: string;
-  icao: string;
-  icao24: string;
-}
-
-interface LiveData {
-  updated: string;
-  latitude: number;
-  longitude: number;
-  altitude: number;
-  direction: number;
-  speed_horizontal: number;
-  speed_vertical: number;
-  is_ground: boolean;
-}
-
-interface Flight {
-  flight_date: string;
-  flight_status: string;
-  departure: AirportInfo;
-  arrival: AirportInfo;
-  airline: Airline;
-  flight: FlightInfo;
-  aircraft: Aircraft;
-  live: LiveData;
-}
+import {Flight} from "../types/Flight";
 
 const PAGE_SIZE = 5;
 

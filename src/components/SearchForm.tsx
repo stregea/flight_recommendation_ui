@@ -1,21 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import {SearchParams} from "../types/SearchParams";
 
-interface SearchParams {
-  departure: string;
-  arrival: string;
-  date: string;
-}
-
-export default function SearchForm({ onSearch }: { onSearch: (params: SearchParams) => void }) {
+export default function SearchForm({ onSearchAction }: { onSearchAction: (params: SearchParams) => void }) {
   const [departure, setDeparture] = useState('');
   const [arrival, setArrival] = useState('');
   const [date, setDate] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSearch({ departure, arrival, date });
+    onSearchAction({ departure, arrival, date });
   };
 
   return (
