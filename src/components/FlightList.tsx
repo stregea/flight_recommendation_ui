@@ -27,7 +27,7 @@ interface FlightInfo {
   number: string;
   iata: string;
   icao: string;
-  codeshared?: any;
+  codeshared?: never;
 }
 
 interface Aircraft {
@@ -83,8 +83,8 @@ export default function FlightList({ flights }: { flights: Flight[] }) {
       <>
         <div className="list-group">
           {flightsPage.map((flight, idx) => {
-            const depTime = new Date(flight.departure.scheduled).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
-            const arrTime = new Date(flight.arrival.scheduled).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' });
+            const depTime = new Date(flight.departure.scheduled).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: "UTC" });
+            const arrTime = new Date(flight.arrival.scheduled).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
 
             return (
                 <div
